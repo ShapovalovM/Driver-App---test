@@ -1,5 +1,7 @@
 {
   "name": "welcomer",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

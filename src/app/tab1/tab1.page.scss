@@ -1,4 +1,139 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+ion-segment-button {
+  --background: #ffffff;
+  --background-activated: #ffffff;
+  --background-checked: #ffffff;
+
+  --color-activated: #2e3b4e;
+  --color-checked: #2e3b4e;
+  --indicator-color-checked: #71d4e3;
+
+  border-top: 1px solid #f7f7f7;
+
+  font-size: 12px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.title {
+  vertical-align: middle;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  ion-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.transfer {
+  .vertical-line {
+    width: 0;
+    border-right: 1px solid rgba(49, 58, 83, 0.1);
+  }
+  .border-top {
+    border-top: 1px solid rgba(49, 58, 83, 0.1);
+  }
+  .border-right {
+
+  }
+  .card-box, .flex-row, .flex-col {
+    display: flex;
+    justify-content: space-around;
+  }
+  .flex-col, .card-box {
+    flex-direction: column;
+  }
+  .flex-row {
+    flex-direction: row;
+  }
+  .bottom-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .date-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 123px;
+  }
+  .address {
+    font-size: 12px;
+    font-weight: 500;
+    width: 100%;
+  }
+  .direction {
+    min-width: 30px;
+    margin-right: 12px;
+    text-align: end;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.67;
+  }
+  .date {
+    font-size: 12px;
+  }
+  .time {
+    font-size: 18px;
+    border-radius: 2px;
+    padding: 7px;
+    border: solid 1px rgba(123, 131, 156, 0.1);
+  }
+  .options {
+    ion-icon {
+      width: 12px;
+      height: 12px;
+    }
+    ion-label {
+      font-size: 11.3px;
+    }
+  }
+  .travel-details {
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    span {
+      text-transform: none;
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+  .status {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 4px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    width: 60px;
+    text-align: center;
+  }
+  .status.delayed {
+    background: #ed5096;
+    color: #ffffff;
+  }
+  .status.check {
+    background: #f7f7f7;
+    color: #2e3b4e;
+  }
+}
+
+.traveler {
+  ion-avatar img {
+    height: 50px;
+    width: 50px;
+  }
 }

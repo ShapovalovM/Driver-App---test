@@ -9,3 +9,39 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+@font-face {
+  font-family: 'MuseoSans';
+  src: url('./assets/fonts/MuseoSansCyrl-500.ttf');
+}
+
+* {
+  font-family: 'MuseoSans';
+}
+
+.medium-text {
+  color: #7f859f;
+}
+.light-text {
+  color: #2e3b4e;
+  opacity: 0.2;
+}
+
+ion-content {
+  --background: #f7f7f7;
+  --padding-bottom: 40px;
+}
+ion-card {
+  --background: #ffffff !important;
+}
+ion-segment-button {
+  --background: #ffffff;
+}
+
+.md ion-fab {
+  margin-bottom: 17px;
+}
+
+.ios ion-fab {
+  margin-bottom: 8px;
+}

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Remove transfer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <p>Please find and contact another Welcome driver that is ready to accept this transfer</p>
+
+    <p><ion-icon icon="help"></ion-icon>Removal policy</p>
+
+
+    <ion-button (click)="findReplacement()">Select replacement driver</ion-button>
+    <ion-button>I didn't find a replacement</ion-button>
+    <p>
+      You will get a red flag and €10 will be deducted from your next payment
+    </p>
+</ion-content>

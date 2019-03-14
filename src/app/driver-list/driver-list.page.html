@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Drivers in Athens</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar #searchbar></ion-searchbar>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Previously selected</ion-label>
+    </ion-list-header>
+    <ion-item (click)="goToResultPage(true)" *ngFor="let i of [1,2,3]">
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>Item Avatar</ion-label>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>Suitable for assignment</ion-label>
+    </ion-list-header>
+    <ion-item (click)="goToResultPage(false)" *ngFor="let j of [1,2,3,4,5]">
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>Item Avatar</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

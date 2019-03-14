@@ -1,41 +1,136 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab One
+      Transfer #542-1
     </ion-title>
   </ion-toolbar>
+
+  <ion-segment [(ngModel)]="segment" mode="md" (ionChange)="segmentChanged($event)">
+    <ion-segment-button mode="md" value="transfer">
+      <ion-label>Transfer</ion-label>
+    </ion-segment-button>
+    <ion-segment-button mode="md" value="traveler">
+      <ion-label>Traveler</ion-label>
+    </ion-segment-button>
+    <ion-segment-button mode="md" value="property">
+      <ion-label>Property</ion-label>
+    </ion-segment-button>
+    <ion-segment-button mode="md" value="products">
+      <ion-label>Products</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
-<ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+<ion-content padding-horizontal>
+
+  <h3 class="title">
+    <ion-icon icon="car"></ion-icon>
+    Transfer
+  </h3>
+
+  <ion-card class="transfer" no-margin margin-bottom>
+    <ion-card-content no-padding>
+      <ion-grid no-padding>
+        <div class="flex-row">
+          <div padding class="flex-col date-container border-right" text-center size="4">
+            <div margin-bottom class="date medium-text">Mon 17 2018</div>
+            <div text-center>
+              <ion-label class="time medium-text">16:00</ion-label>
+            </div>
+            <div margin-top class="flex-row options medium-text">
+              <ion-icon src="./assets/svg/bag.svg"></ion-icon>
+              <ion-label>2</ion-label>
+
+              <ion-icon src="./assets/svg/person.svg"></ion-icon>
+              <ion-label>2</ion-label>
+
+              <ion-icon src="./assets/svg/baby.svg"></ion-icon>
+              <ion-label>1</ion-label>
+            </div>
+          </div>
+          <div class="flex-col vertical-line"></div>
+          <div padding class="flex-col">
+            <div class="flex-row" margin-bottom>
+              <p class="direction light-text">From</p>
+              <div class="address medium-text">Athens Airport, Koropi 10205</div>
+            </div>
+            <div class="flex-row">
+              <p class="direction light-text">To</p>
+              <div class="address medium-text">Helectra Hotel Athens, Vouliagmeni 17561</div>
+            </div>
+          </div>
+        </div>
+        <ion-row padding class="border-top" align-items-center>
+          <ion-col class="bottom-row">
+
+            <div class="travel-details">
+              EASYJET 5088
+              <br/>
+              <span>from London</span>
+            </div>
+
+            <div class="status delayed">Delayed</div>
+
+            <div class="travel-details">
+              Expected
+              <br/>
+              <span>17:05</span>
+            </div>
+
+            <div class="status check">Check</div>
+
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <h3 class="title">
+    <ion-icon icon="car"></ion-icon>
+    Traveler
+  </h3>
+
+  <ion-card class="traveler" no-margin margin-bottom>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-avatar>
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label>Francisca Ramirez</ion-label>
+          </ion-col>
+          <ion-col text-right size="4">
+            <p>+555-55-55</p>
+            <p>Ukraine</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">In Greece Until</ion-col>
+          <ion-col>18 Nov</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">Times in Athens</ion-col>
+          <ion-col>This is the first</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">Traveling for</ion-col>
+          <ion-col>Leisure</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">Visits</ion-col>
+          <ion-col>Athens & Santorini</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">Note</ion-col>
+          <ion-col>I am visiting for a Weeding</ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button (click)="presentActionSheet()" expand="block">Remove from my schedule</ion-button>
+
 </ion-content>
