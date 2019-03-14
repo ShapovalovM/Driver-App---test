@@ -5,7 +5,7 @@
     </ion-title>
   </ion-toolbar>
 
-  <ion-segment [(ngModel)]="segment" mode="md" (ionChange)="segmentChanged($event)">
+  <ion-segment scrollable [(ngModel)]="segment" mode="md" (ionChange)="segmentChanged($event)">
     <ion-segment-button mode="md" value="transfer">
       <ion-label>Transfer</ion-label>
     </ion-segment-button>
@@ -23,114 +23,126 @@
 
 <ion-content padding-horizontal>
 
-  <h3 class="title">
-    <ion-icon icon="car"></ion-icon>
-    Transfer
-  </h3>
+  <section *ngIf="segment=='transfer'">
 
-  <ion-card class="transfer" no-margin margin-bottom>
-    <ion-card-content no-padding>
-      <ion-grid no-padding>
-        <div class="flex-row">
-          <div padding class="flex-col date-container border-right" text-center size="4">
-            <div margin-bottom class="date medium-text">Mon 17 2018</div>
-            <div text-center>
-              <ion-label class="time medium-text">16:00</ion-label>
+    <div class="title-block">
+      <ion-icon class="no-stroke" src="./assets/svg/transfer.svg"></ion-icon>
+      <ion-text class="title">
+        Transfer
+      </ion-text>
+    </div>
+
+    <ion-card class="transfer" no-margin margin-bottom>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <div class="flex-row">
+            <div padding class="flex-col date-container border-right" text-center size="4">
+              <div margin-bottom class="date medium-text">Mon 17 2018</div>
+              <div text-center>
+                <ion-label class="time medium-text">16:00</ion-label>
+              </div>
+              <div margin-top class="flex-row options medium-text">
+                <ion-icon src="./assets/svg/bag.svg"></ion-icon>
+                <ion-label>2</ion-label>
+
+                <ion-icon src="./assets/svg/person.svg"></ion-icon>
+                <ion-label>2</ion-label>
+
+                <ion-icon src="./assets/svg/baby.svg"></ion-icon>
+                <ion-label>1</ion-label>
+              </div>
             </div>
-            <div margin-top class="flex-row options medium-text">
-              <ion-icon src="./assets/svg/bag.svg"></ion-icon>
-              <ion-label>2</ion-label>
-
-              <ion-icon src="./assets/svg/person.svg"></ion-icon>
-              <ion-label>2</ion-label>
-
-              <ion-icon src="./assets/svg/baby.svg"></ion-icon>
-              <ion-label>1</ion-label>
+            <div class="flex-col vertical-line"></div>
+            <div padding class="flex-col">
+              <div class="flex-row" margin-bottom>
+                <p class="direction light-text">From</p>
+                <div class="address medium-text">Athens Airport, Koropi 10205</div>
+              </div>
+              <div class="flex-row">
+                <p class="direction light-text">To</p>
+                <div class="address medium-text">Helectra Hotel Athens, Vouliagmeni 17561</div>
+              </div>
             </div>
           </div>
-          <div class="flex-col vertical-line"></div>
-          <div padding class="flex-col">
-            <div class="flex-row" margin-bottom>
-              <p class="direction light-text">From</p>
-              <div class="address medium-text">Athens Airport, Koropi 10205</div>
-            </div>
-            <div class="flex-row">
-              <p class="direction light-text">To</p>
-              <div class="address medium-text">Helectra Hotel Athens, Vouliagmeni 17561</div>
-            </div>
-          </div>
-        </div>
-        <ion-row padding class="border-top" align-items-center>
-          <ion-col class="bottom-row">
+          <ion-row padding class="border-top" align-items-center>
+            <ion-col no-padding class="bottom-row">
 
-            <div class="travel-details">
-              EASYJET 5088
-              <br/>
-              <span>from London</span>
-            </div>
+              <div class="travel-details">
+                EASYJET 5088
+                <br/>
+                <span>from London</span>
+              </div>
 
-            <div class="status delayed">Delayed</div>
+              <div class="status delayed">Delayed</div>
 
-            <div class="travel-details">
-              Expected
-              <br/>
-              <span>17:05</span>
-            </div>
+              <div class="travel-details">
+                Expected
+                <br/>
+                <span>17:05</span>
+              </div>
 
-            <div class="status check">Check</div>
+              <div class="status check">Check</div>
 
-          </ion-col>
+            </ion-col>
 
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
 
-  <h3 class="title">
-    <ion-icon icon="car"></ion-icon>
-    Traveler
-  </h3>
+    <div class="title-block">
+      <ion-icon class="no-stroke" src="./assets/svg/traveler.svg"></ion-icon>
+      <ion-text class="title">
+        Traveler
+      </ion-text>
+    </div>
 
-  <ion-card class="traveler" no-margin margin-bottom>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-avatar>
-              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-            </ion-avatar>
-            <ion-label>Francisca Ramirez</ion-label>
-          </ion-col>
-          <ion-col text-right size="4">
-            <p>+555-55-55</p>
-            <p>Ukraine</p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="4">In Greece Until</ion-col>
-          <ion-col>18 Nov</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="4">Times in Athens</ion-col>
-          <ion-col>This is the first</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="4">Traveling for</ion-col>
-          <ion-col>Leisure</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="4">Visits</ion-col>
-          <ion-col>Athens & Santorini</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="4">Note</ion-col>
-          <ion-col>I am visiting for a Weeding</ion-col>
-        </ion-row>
-      </ion-grid>
 
-    </ion-card-content>
-  </ion-card>
+    <ion-card class="traveler" no-margin margin-bottom>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row align-items-center>
+            <ion-col class="col-avatar" size="auto">
+              <ion-avatar>
+                <img src="./assets/photos/francisca.jpg">
+              </ion-avatar>
+            </ion-col>
+            <ion-col>
+              <ion-label class="fullname">Francisca Ramirez</ion-label>
+            </ion-col>
+            <ion-col size="auto" text-right>
+              <p class="phone">+1 621 1738292</p>
+              <p class="country">United States</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" class="table-title border-right">In Greece Until</ion-col>
+            <ion-col class="answer">18 Nov</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" class="table-title border-right">Times in Athens</ion-col>
+            <ion-col class="answer">This is the first</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" class="table-title border-right">Traveling for</ion-col>
+            <ion-col class="answer">Leisure</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" class="table-title border-right">Visits</ion-col>
+            <ion-col class="answer">Athens & Santorini</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" class="table-title border-right">Note</ion-col>
+            <ion-col class="answer">I am visiting for a Weeding</ion-col>
+          </ion-row>
+        </ion-grid>
 
-  <ion-button (click)="presentActionSheet()" expand="block">Remove from my schedule</ion-button>
+      </ion-card-content>
+    </ion-card>
 
+    <ion-button mode="md" class="block-button" fill="outline" color="medium" (click)="presentActionSheet()" expand="block">
+      Remove from my schedule
+    </ion-button>
+
+  </section>
 </ion-content>

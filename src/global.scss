@@ -19,6 +19,11 @@
   font-family: 'MuseoSans';
 }
 
+.no-stroke {
+  stroke:none;
+  stroke-width: 0;
+}
+
 .medium-text {
   color: #7f859f;
 }
@@ -44,4 +49,10 @@ ion-segment-button {
 
 .ios ion-fab {
   margin-bottom: 8px;
+}
+
+.block-button {
+  font-size: 14px;
+  font-weight: bold;
+  height: 48px;
 }
