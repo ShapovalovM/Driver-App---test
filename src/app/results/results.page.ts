@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -10,13 +10,16 @@ export class ResultsPage implements OnInit {
 
   result = true;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute ) {}
 
   ngOnInit() {
+    this.route.paramMap.subscribe((data: any) => {
+      this.result = !!+data.params.status;
+    });
   }
 
   findReplacement() {
-    this.router.navigate(['/driver-list']);
+    this.router.navigateByUrl('/driver-list');
   }
 
   confirm() {

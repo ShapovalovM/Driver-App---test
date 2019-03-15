@@ -31,7 +31,7 @@
 
 
     <div *ngIf="result; else errorButtonArea">
-      <ion-button (click)="result = !result" expand="block" color="main" class="block-button" (click)="confirm()">Ok</ion-button>
+      <ion-button expand="block" color="main" class="block-button" (click)="confirm()">Ok</ion-button>
     </div>
 
     <ng-template #errorButtonArea>
