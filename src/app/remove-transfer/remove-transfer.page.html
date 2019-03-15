@@ -7,21 +7,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="white-bg" padding>
 
-  <div class="container" text-center>
+  <div class="full-height flex-container flex-col" text-center>
 
-    <div class="flex-row">
-      <p>Please find and contact another Welcome driver that is ready to accept this transfer</p>
+    <div padding class="flex-container flex-col flex-stretch flex-center">
+      <ion-text padding class="description">Please find and contact another Welcome driver that is ready to accept this transfer</ion-text>
 
-      <p><ion-icon icon="help"></ion-icon>Removal policy</p>
+      <ion-button color="medium" fill="clear" (click)="openHelp()" class="btn-info"><ion-icon icon="help-circle-outline"></ion-icon>Removal policy</ion-button>
     </div>
 
+    <div>
+      <ion-button expand="block" color="secondary" class="block-button" (click)="findReplacement()">Select replacement driver</ion-button>
 
-    <div class="flex-row">
-      <ion-button expand="block" class="block-button" (click)="findReplacement()">Select replacement driver</ion-button>
-
-      <ion-button mode="md" expand="block" class="block-button" fill="outline" color="danger">I didn't find a replacement</ion-button>
+      <ion-button margin-vertical mode="md" expand="block" class="block-button" fill="outline" color="danger">I didn't find a replacement</ion-button>
 
       <ion-text color="danger">
         You will get a red flag and €10 will be deducted from your next payment
@@ -29,7 +28,5 @@
     </div>
 
   </div>
-
-
 
 </ion-content>

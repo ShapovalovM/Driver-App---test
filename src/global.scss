@@ -3,7 +3,6 @@
 @import '~@ionic/angular/css/normalize.css';
 @import '~@ionic/angular/css/structure.css';
 @import '~@ionic/angular/css/typography.css';
-
 @import '~@ionic/angular/css/padding.css';
 @import '~@ionic/angular/css/float-elements.css';
 @import '~@ionic/angular/css/text-alignment.css';
@@ -19,36 +18,23 @@
   font-family: 'MuseoSans';
 }
 
+/* Style set of the entire app for all platforms */
 .no-stroke {
-  stroke:none;
+  stroke: none;
   stroke-width: 0;
 }
 
 .medium-text {
   color: #7f859f;
 }
+
 .light-text {
   color: #2e3b4e;
   opacity: 0.2;
 }
 
-ion-content {
-  --background: #f7f7f7;
-  --padding-bottom: 40px;
-}
-ion-card {
-  --background: #ffffff !important;
-}
-ion-segment-button {
+.white-bg {
   --background: #ffffff;
-}
-
-.md ion-fab {
-  margin-bottom: 17px;
-}
-
-.ios ion-fab {
-  margin-bottom: 8px;
 }
 
 .block-button {
@@ -56,3 +42,35 @@ ion-segment-button {
   font-weight: bold;
   height: 48px;
 }
+
+ion-content {
+  --background: #f7f7f7;
+  --padding-bottom: 40px;
+}
+
+ion-card {
+  --background: #ffffff !important;
+}
+
+ion-segment-button {
+  --background: #ffffff;
+}
+
+/* Style set of the entire app for Material Design only */
+.md {
+  ion-fab {
+    margin-bottom: 17px;
+  }
+}
+
+/* Style set of the entire app for iOS only */
+.ios {
+  ion-fab {
+    margin-bottom: 8px;
+  }
+  ion-button {
+    --border-radius: 4px;
+  }
+}
+
+

@@ -19,4 +19,7 @@ export class ResultsPage implements OnInit {
     this.router.navigate(['/driver-list']);
   }
 
+  confirm() {
+    this.router.navigateByUrl('/');
+  }
 }

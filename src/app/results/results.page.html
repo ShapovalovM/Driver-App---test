@@ -1,44 +1,53 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="white-bg" padding>
 
-<ion-content padding>
+  <div class="full-height flex-container flex-col" text-center>
 
-  <section *ngIf="result; else errorBlock">
+    <div padding class="flex-container flex-col flex-stretch flex-around">
+      <div>
 
-    <ion-icon name="checkmark-circle"></ion-icon>
+        <div class="driver-photo">
+          <ion-avatar [ngClass]="result ? 'success' : 'error'">
+            <img src="./assets/photos/aris.jpg"/>
+          </ion-avatar>
+          <ion-icon name="{{result ? 'checkmark' : 'close' }}"></ion-icon>
+        </div>
 
-    <p>Transfer removed from your schedule and reassigned</p>
-    <p>
-      Be aware that removals reduce your overall score. Removal rate over 15% may result in offboarding.
-    </p>
+        <div *ngIf="result; else reason">
+          <p class="main">Transfer removed from your schedule and reassigned</p>
+          <p class="secondary">
+            Be aware that removals reduce your overall score. Removal rate over 15% may result in offboarding.
+          </p>
+        </div>
+        <ng-template #reason>
+          <p class="main">Aris did not accept in time</p>
+        </ng-template>
+      </div>
 
-    <div>
-      <p>Removal rate in 60 days</p>
-      <p>15%</p>
+      <div *ngIf="result" class="smoke-bg wrapper" align-self-center padding>
+        <p class="rate-in" no-margin>Removal rate in 60 days</p>
+        <p class="value" margin>15%</p>
+      </div>
     </div>
 
-    <ion-button>Ok</ion-button>
 
-  </section>
+    <div *ngIf="result; else errorButtonArea">
+      <ion-button (click)="result = !result" expand="block" color="main" class="block-button" (click)="confirm()">Ok</ion-button>
+    </div>
 
-  <section #errorBlock>
+    <ng-template #errorButtonArea>
+      <ion-button expand="block" color="secondary" class="block-button" (click)="findReplacement()">Select replacement
+        driver
+      </ion-button>
 
-    <ion-icon name="close-circle"></ion-icon>
+      <ion-button margin-vertical mode="md" expand="block" class="block-button" fill="outline" color="warning">I didn't
+        find a replacement
+      </ion-button>
 
-    <p>Aris did not accept in time</p>
+      <ion-text color="warning">
+        You will get a yellow flag
+      </ion-text>
+    </ng-template>
 
-    <ion-button (click)="findReplacement()">Select replacement driver</ion-button>
-    <ion-button>I didn't find a replacement</ion-button>
-
-    <p>
-      You will get a yellow flag
-    </p>
-
-  </section>
+  </div>
 
 </ion-content>

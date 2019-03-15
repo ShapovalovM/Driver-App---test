@@ -1,0 +1,38 @@
+.searchbar-bg {
+  --background: #c0c3ca;
+
+}
+.header-ios {
+  ion-toolbar.searchbar-bg {
+    height: 56px;
+    display: flex;
+  }
+}
+ion-searchbar {
+  --background: #ffffff;
+}
+ion-list {
+  padding-bottom: 0;
+  ion-avatar {
+    height: 44px;
+    width: 44px;
+    margin: 10px;
+  }
+  :not(ion-list-header) {
+    ion-label {
+      padding-left: 16px;
+    }
+  }
+}
+ion-list-header {
+  padding-top: 16px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  font-size: 10px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  --background: #f7f7f7;
+}
