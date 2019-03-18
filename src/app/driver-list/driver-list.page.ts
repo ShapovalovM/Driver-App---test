@@ -10,16 +10,18 @@ import { DriverService } from '../providers/driver.service';
 export class DriverListPage implements OnInit {
   @ViewChild('searchbar') searchbar;
 
+  driverList: any = [];
+
   recentDriverList: any = [];
   possibleDriverList: any = [];
 
   constructor(private router: Router, public driverSrv: DriverService) {}
 
   initData() {
-    const driverList = this.driverSrv.getDrivers();
+    this.driverList = this.driverSrv.getDrivers();
 
-    this.recentDriverList = driverList.filter((el) => el.recent);
-    this.possibleDriverList = driverList.filter((el) => !el.recent);
+    this.recentDriverList = this.driverList.filter((el) => el.recent);
+    this.possibleDriverList = this.driverList.filter((el) => !el.recent);
   }
 
   ngOnInit() {
@@ -32,17 +34,13 @@ export class DriverListPage implements OnInit {
   }
 
   search(data: any) {
-    this.initData();
-
     const searchStr = data.target.value;
 
-    if (searchStr && searchStr.trim() !== '') {
-      this.recentDriverList = this.recentDriverList.filter((item) => {
-        return (item.fullName.toLowerCase().indexOf(searchStr.toLowerCase()) > -1);
-      });
-      this.possibleDriverList = this.possibleDriverList.filter((item) => {
-        return (item.fullName.toLowerCase().indexOf(searchStr.toLowerCase()) > -1);
-      });
-    }
+    this.recentDriverList = this.driverList.filter((item) => {
+      return (item.fullName.toLowerCase().indexOf(searchStr.toLowerCase()) > -1 && item.recent);
+    });
+    this.possibleDriverList = this.driverList.filter((item) => {
+      return (item.fullName.toLowerCase().indexOf(searchStr.toLowerCase()) > -1 && !item.recent);
+    });
   }
 }
